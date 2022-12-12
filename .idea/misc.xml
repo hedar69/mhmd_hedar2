@@ -4,15 +4,18 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/user/AndroidStudioProjects/mhmd_hedar/app/src/main/res/drawable/ic_baseline_clean_hands_24.xml" value="0.197" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/mhmd_hedar/app/src/main/res/drawable/ic_baseline_create_24.xml" value="0.1325" />
         <entry key="..\:/Users/user/AndroidStudioProjects/mhmd_hedar/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.1325" />
         <entry key="..\:/Users/user/AndroidStudioProjects/mhmd_hedar/app/src/main/res/drawable/ic_baseline_login_24.xml" value="0.1325" />
         <entry key="..\:/Users/user/AndroidStudioProjects/mhmd_hedar/app/src/main/res/drawable/ic_baseline_perm_identity_24.xml" value="0.1325" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/mhmd_hedar/app/src/main/res/layout/activity_camera.xml" value="0.18" />
         <entry key="..\:/Users/user/AndroidStudioProjects/mhmd_hedar/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/mhmd_hedar/app/src/main/res/layout/activity_main2.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/mhmd_hedar/app/src/main/res/layout/activity_register.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/mhmd_hedar/app/src/main/res/layout/activity_register.xml" value="0.2" />
         <entry key="..\:/Users/user/AndroidStudioProjects/mhmd_hedar/app/src/main/res/layout/activity_settingsactivity.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/user/AndroidStudioProjects/mhmd_hedar/app/src/main/res/layout/activity_setttingsactivity.xml" value="0.19010416666666666" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/mhmd_hedar/app/src/main/res/menu/main_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/mhmd_hedar/app/src/main/res/layout/activity_userinfo.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/mhmd_hedar/app/src/main/res/menu/main_menu.xml" value="0.33" />
       </map>
     </option>
   </component>

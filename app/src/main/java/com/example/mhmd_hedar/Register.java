@@ -4,12 +4,14 @@ package com.example.mhmd_hedar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.prefs.PreferenceChangeEvent;
 
@@ -30,7 +32,7 @@ public class Register extends AppCompatActivity {
         etmail = findViewById(R.id.editTextTextEmailAddress);
         etpassword = findViewById(R.id.editTextNumberPassword);
         btnRegister = findViewById(R.id.buttonRegister);
-        btcancel = findViewById(R.id.button2);
+
 
         preferences = getSharedPreferences("userinfo", 0);
 
@@ -38,13 +40,29 @@ public class Register extends AppCompatActivity {
     }
 
 
-    public void register(View view){
-        String etMail = etmail.getText().toString();
-        String etPass = etpassword.getText().toString();
-        //saves the email value in the prefrences and commits the file
-        preferences.edit().putString("email",etMail).commit();
-        preferences.edit().putString("password",etPass).commit();
+    public void register(View view) {
 
+        String input_mail = etmail.getText().toString();
+        String input_password = etpassword.getText().toString();
+        if (input_mail.length() > 0) {
+            //open preferences file
+            SharedPreferences.Editor editor = preferences.edit();
+            //save key,value data
+            editor.putString("username", input_mail);
+            editor.putString("password", input_password);
+
+            editor.apply();
+
+            Toast.makeText(this, "User registered", Toast.LENGTH_SHORT).show();
+            Intent intent_main = new Intent(this, MainActivity.class);
+            startActivity(intent_main);
+        } else {
+            Toast.makeText(this, "Empty values, please insert!", Toast.LENGTH_SHORT).show();
+        }
     }
 
+    public void cancel(View view) {
+        Intent intent_main = new Intent(this, MainActivity.class);
+        startActivity(intent_main);
+    }
 }

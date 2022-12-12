@@ -19,13 +19,13 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     EditText editTextEmail, editTextPassword;
-    Button buttonLogin;
+    Button buttonLogin, buttonSignUp;
     TextView textView1;
 
     private final String valid_mail = "admin";
     private final String valid_password = "1";
+    SharedPreferences preferences;
 
-SharedPreferences sharedPreferences;
 
 
     @Override
@@ -39,8 +39,8 @@ SharedPreferences sharedPreferences;
         buttonLogin = findViewById(R.id.buttonLogin);
 
 
-        textView1 = findViewById(R.id.textView1);
-
+        buttonSignUp = findViewById(R.id.buttonSignUp);
+        preferences = getSharedPreferences("userinfo", 0);
 
     }
 
@@ -58,7 +58,7 @@ SharedPreferences sharedPreferences;
         if (item.getItemId() == R.id.settings_menu){
             //open the about activity when the settings menu item selected
             //this is from where  , and the second paramater is to where
-            Intent i = new Intent(this, setttingsactivity.class);
+            Intent i = new Intent(this, CameraActivity.class);
             startActivity(i);
     }else if (item.getItemId() == R.id.help_menu) {
             Intent i = new Intent(this, ListActivity.class);
@@ -87,21 +87,22 @@ SharedPreferences sharedPreferences;
 
 
     }
-    public void login(View view){
-        String email = sharedPreferences.getString("email","");
-        String password = sharedPreferences.getString("password","");
+    public void login(View view) {
+        String email = preferences.getString("email", "");
+        String password = preferences
+                .getString("password", "");
 
         String etEmail = editTextEmail.getText().toString();
         String etPass = editTextPassword.getText().toString();
-
-        if(email.equals(etEmail) && password.equals(etPass)){
-            Intent i = new Intent(this, AboutActivity.class);
-            startActivity(i);
-        }
-        else
-            Toast.makeText(this, "Error! wrong email or password", Toast.LENGTH_SHORT).show();
+        if (email != null && password != null) {
+            if (email.equals(etEmail) && password.equals(etPass)) {
+                Intent i = new Intent(this, AboutActivity.class);
+                startActivity(i);
+            } else
+                Toast.makeText(this, "Error! wrong email or password", Toast.LENGTH_SHORT).show();
+        } else
+            Toast.makeText(this, "Error! email and password are empty", Toast.LENGTH_SHORT).show();
     }
-
 
     public void register(View view) {
         Intent i_register = new Intent(this, Register.class);
