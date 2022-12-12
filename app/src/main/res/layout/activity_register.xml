@@ -83,7 +83,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         android:backgroundTint="#30ffffff"
-        android:onClick="sign up"
+        android:onClick="signup"
         android:text="Sign up"
         android:textColor="@color/black"
         android:textColorLink="#A31515"

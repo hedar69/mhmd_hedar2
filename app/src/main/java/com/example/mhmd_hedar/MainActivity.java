@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -89,8 +90,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void login(View view) {
         String email = preferences.getString("email", "");
-        String password = preferences
-                .getString("password", "");
+        String password = preferences.getString("password", "");
 
         String etEmail = editTextEmail.getText().toString();
         String etPass = editTextPassword.getText().toString();
@@ -98,8 +98,10 @@ public class MainActivity extends AppCompatActivity {
             if (email.equals(etEmail) && password.equals(etPass)) {
                 Intent i = new Intent(this, AboutActivity.class);
                 startActivity(i);
-            } else
+            } else {
                 Toast.makeText(this, "Error! wrong email or password", Toast.LENGTH_SHORT).show();
+                Log.d("DBUGGINGGGGG",email+" "+password+" "+etEmail+" "+etPass);
+            }
         } else
             Toast.makeText(this, "Error! email and password are empty", Toast.LENGTH_SHORT).show();
     }

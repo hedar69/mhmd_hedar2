@@ -40,7 +40,7 @@ public class Register extends AppCompatActivity {
     }
 
 
-    public void register(View view) {
+    public void signup(View view) {
 
         String input_mail = etmail.getText().toString();
         String input_password = etpassword.getText().toString();
@@ -48,7 +48,7 @@ public class Register extends AppCompatActivity {
             //open preferences file
             SharedPreferences.Editor editor = preferences.edit();
             //save key,value data
-            editor.putString("username", input_mail);
+            editor.putString("email", input_mail);
             editor.putString("password", input_password);
 
             editor.apply();
